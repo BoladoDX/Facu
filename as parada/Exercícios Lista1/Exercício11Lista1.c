@@ -13,12 +13,12 @@ int main(){
 
     float horas, velocidade, lit_nec, distancia;
 
-    printf("Digite o tempo gasto na viagem e a velocidade media durante ela: \n");
+    printf("Digite o tempo gasto na viagem (em horas) e a velocidade media (em km/h) durante ela: \n");
     scanf("%f %f", &horas, &velocidade);
 
     distancia = (velocidade * horas);
 	lit_nec = (distancia / 12);
 	
-	printf("A distancia percorrida foi %.2f, logo, a quantidade de litros gastos foram de: %.3fL \n", distancia, lit_nec);
+	printf("A distancia percorrida foi %.2fKm, logo, a quantidade de litros gastos foram de: %.3fL \n", distancia, lit_nec);
 	return 0;
 }
