@@ -5,5 +5,19 @@
 
 int main()
 {
-    
+    int A[10], i, n = 21, posicao = 1;
+
+    for(i = 0; i < 10; i++)
+    {
+        A[i] = n;
+        n++;
+    }
+
+    for(i = 0; i < 10; i++)
+    {
+        printf("%do Vetor: %d\n", posicao, A[i]);
+        posicao++;
+    }
+
+    return 0;
 }

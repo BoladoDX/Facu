@@ -6,5 +6,24 @@
 
 int main()
 {
-    
+    int A[20], B[20], i, n = 5, posicao = 1;
+
+    for(i = 0; i < 20; i++)
+    {
+        A[i] = n;
+        n++;
+    }
+
+    for(i = 0; i < 20; i++)
+    {
+        B[i] = 2*A[i];
+    }    
+
+    for(i = 0; i < 20; i++)
+    {
+        printf("%do Vetor: %d, seu dobro: %d\n", posicao, A[i], B[i]);
+        posicao++;
+    }
+
+    return 0;
 }
