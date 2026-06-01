@@ -16,7 +16,7 @@ int main()
     {
         for(j = 0; j < 5; j++)
         {
-            printf("Digite o valor do espaço %d - %d:\n", pos1, pos2);
+            printf("Digite o valor do espaco %d - %d:\n", pos1, pos2);
             scanf("%f", &M[i][j]);
             pos2++;
         }
@@ -51,7 +51,23 @@ int main()
     printf("\nSoma da coluna 2: %.2f", soma2);
 
     //Soma da diagonal principal de M
-    
+    for(i = 0; i < 5; i++)
+    {
+        soma3 += M[i][i];
+    }
 
+    printf("\nSoma da diagonal principal: %.2f", soma3);
+
+    //Soma de todos os elementos da matriz M
+    for(i = 0; i < 5; i++)
+    {
+        for(j = 0; j < 5; j++)
+        {
+            soma4 += M[i][j];
+        }
+    }
+
+    printf("\nSoma de todos os elementos da matriz: %.2f\n", soma4);
+    
     return 0;
 }
