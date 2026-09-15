@@ -9,7 +9,7 @@ void imprime_vetor(int *p, int tamanho)
 
     for(i = 0; i < tamanho; i++)
     {
-        printf("[%d]: %d, endereco: %d\n", i, *p, p);
+        printf("V[%d]: %d, endereco: %d\n", i, *p, p);
         p++;
     }
     return;
