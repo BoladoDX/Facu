@@ -4,7 +4,6 @@
 //duas datas.
 
 #include <stdio.h>
-#include <stdlib.h>
 
 struct data
 {
@@ -26,7 +25,7 @@ int main()
         printf("%da Data:", i+1);
         scanf("%d %d %d", &d[i].dia, &d[i].mes, &d[i].ano);
 
-        if((d[i].ano < 0)||(d[i].mes < 0)||(d[i].dia < 0)||(d[i].mes > 12)||(d[i].dia > 31))
+        if((d[i].ano < 0)||(d[i].mes <= 0)||(d[i].dia <= 0)||(d[i].mes > 12)||(d[i].dia > 31))
         {
             printf("Data invalida, tente novamente\n");
             i--;
