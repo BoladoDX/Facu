@@ -9,7 +9,7 @@
 int main()
 {
     float medias[5];
-    int i, j, aux;
+    int i, j, h, maior_media = 0, aux;
 
     struct notas
     {
@@ -43,8 +43,16 @@ int main()
     for(i = 0; i < 5; i++)
     {
         medias[i] = (aluno[i].provas.nota1 + aluno[i].provas.nota2 + aluno[i].provas.nota3) / 3;
-        printf("Media do aluno %d: %.2f\n", i+1, medias[i]);
+        printf("Media do aluno de matricula %d: %.2f\n", aluno[i].matricula, medias[i]);
+
+        if(medias[i] >= maior_media)
+        {
+            maior_media = medias[i];
+            h = i;
+        }
     }
+
+    printf("\nAluno de maior media: %s\nMatricula: %d\nRespectivas notas: %.2f, %.2f, %.2f\n", aluno[h].nome, aluno[h].matricula, aluno[h].provas.nota1, aluno[h].provas.nota2, aluno[h].provas.nota3);
 
     return 0;
 }
