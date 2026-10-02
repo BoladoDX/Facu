@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt BR">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app">
+        <header class="topbar">
+            <div class="brand"><span class="brand-mark">🙂​</span><span>Verity</span></div>
+            <button class="icon-button" id="clear-button" title="Limpar conversa" aria-label="Limpar conversa">&#9003</button>
+        </header>
+
+        <section class="chat" id="chat" aria-live="polite">
+            <div class="welcome" id="welcome">
+                <div class="welcome-icon">🙂​</div>
+                <hl>Olá, eu sou o Verity, me pergunte qualquer coisa, eu conheço todas as coisas!</hl>
+                <p>Converse com seu ajudante pessoal, Verity!</p>
+                <div class="suggestions">
+                    <button data-prompt="Qual a capital da França?">Qual a capital da França?</button>
+                    <button data-prompt="O que a vaca fala?">O que a vaca fala?</button>
+                    <button data-prompt="Explique como funciona a inteligência artificial">Explique como funciona a inteligência artificial</button>
+                </div>
+            </div>
+        </section>
+
+        <form class="composer" id="form">
+            <div class="input-wrap">
+                <textarea id="message" rows="1" placeholder="Me pergunte qualquer coisa" aria-label="Mensagem"></textarea>
+                <button class="send-button" id="send-button" type="submit" aria-label="Enviar Mensagem">➤</button>
+            </div>
+            <small>O chat pode cometer erros. Verifique as informações importantes.</small>
+        </form>
+    </main>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
