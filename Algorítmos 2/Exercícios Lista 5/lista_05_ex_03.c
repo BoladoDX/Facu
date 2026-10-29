@@ -19,20 +19,54 @@ int* vetor(int n)
 
     struct cadastro pessoa[n];
 
-    p = calloc(n, struct cadastro);
+    p = calloc(n, sizeof(struct cadastro));
+
+    if(p == NULL)
+    {
+        printf("Erro ao alocar memória!\n");
+        return 0;
+    }
 
     while(i < n)
     {
-        printf("Digite o nome da pessoa %d:\n ");
+        printf("Digite o nome da %da pessoa:\n", i+1);
+        scanf("%s", &pessoa[n].nome);
+
+        printf("Digite a idade da %da pessoa:\n", i+1);
+        scanf("%d", &pessoa[n].idade);
+
+        printf("Digite o endereco da %da pessoa:\n", i+1);
+        scanf("%s", &pessoa[n].endereco);
+
+        i++;
     }
 
-    p = pessoa[0];
+    free(p);
 
     return p;
 }
 
 int main()
 {
+    int n, *p;
+
+    printf("Digite quantas pessoas vai cadastrar:\n");
+    scanf("%d", &n);
+
+    p = vetor(n);
+
+    printf("\nInformacoes das pessoas cadastradas (na main):\n");
+    for(int i = 0; i < n; i++)
+    {
+        printf("Nome da %da pessoa: %s\n", i+1, *p);
+        p++;
+        
+        printf("Idade da %da pessoa: %d\n", i+1, *p);
+        p++;
+
+        printf("Endereco da %da pessoa: %s\n", i+1, *p);
+        p++;
+    }
 
     return 0;
 }
