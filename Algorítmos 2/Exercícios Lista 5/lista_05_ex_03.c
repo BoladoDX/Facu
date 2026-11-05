@@ -13,10 +13,9 @@ struct cadastro
     char endereco[100];
 };
 
-int* vetor(int n)
+struct cadastro* vetor(int n)
 {
-    int *p, i = 0;
-
+    struct cadastro *p;
     struct cadastro pessoa[n];
 
     p = calloc(n, sizeof(struct cadastro));
@@ -27,7 +26,7 @@ int* vetor(int n)
         return 0;
     }
 
-    while(i < n)
+    for(int i = 0; i < n; i++)
     {
         printf("Digite o nome da %da pessoa:\n", i+1);
         scanf("%s", &pessoa[n].nome);
@@ -37,18 +36,17 @@ int* vetor(int n)
 
         printf("Digite o endereco da %da pessoa:\n", i+1);
         scanf("%s", &pessoa[n].endereco);
-
-        i++;
     }
 
-    free(p);
+    p = &pessoa[0];
 
     return p;
 }
 
 int main()
 {
-    int n, *p;
+    int n;
+    struct cadastro *p;
 
     printf("Digite quantas pessoas vai cadastrar:\n");
     scanf("%d", &n);
@@ -58,15 +56,13 @@ int main()
     printf("\nInformacoes das pessoas cadastradas (na main):\n");
     for(int i = 0; i < n; i++)
     {
-        printf("Nome da %da pessoa: %s\n", i+1, *p);
-        p++;
-        
-        printf("Idade da %da pessoa: %d\n", i+1, *p);
-        p++;
+        printf("Nome da %da pessoa: %s\n", i+1, p[i].nome);
+        printf("Idade da %da pessoa: %d\n", i+1, p[i].idade);
+        printf("Endereco da %da pessoa: %s\n", i+1, p[i].endereco);
 
-        printf("Endereco da %da pessoa: %s\n", i+1, *p);
-        p++;
     }
+
+    free(p);
 
     return 0;
 }
