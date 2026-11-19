@@ -1,0 +1,3 @@
+Cod_Cli;Nome;Endereco;Fone
+1;Vinicius;Av. Dr Eloy Chaves 2045;67991235882
+2;Bolado;Aposento dos Lados;67676767676767

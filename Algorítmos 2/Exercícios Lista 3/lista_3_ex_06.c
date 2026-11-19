@@ -20,7 +20,7 @@ int* busca_subvetor(int *vetor, int tam_v, int *sub, int tam_s)
         {
             sub++;
             i++;
-            if(i = 3)
+            if(i = tam_s)
             {
                 p = vetor;
                 return p;
@@ -68,7 +68,7 @@ int main()
         }
     }
 
-    printf("\nInicio da sequencia do Sub-etor comeca na variavel de endereco: %d do Vetor (V[%d])", p, j);
+    printf("\nInicio da sequencia do Sub-vetor comeca na variavel de endereco: %d do Vetor (V[%d])", p, j);
 
     return 0;
 }

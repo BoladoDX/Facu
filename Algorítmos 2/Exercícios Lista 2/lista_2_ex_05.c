@@ -10,11 +10,11 @@ int main()
 
     ap = &a[0];
 
-    for(*ap; i < 5; *ap++)
+    for(i = 0; i < 5; i++)
     {
         printf("Digite o valor da posicao %d do vetor 'a[5]':\n", i);
         scanf("%d", &*ap);
-        i++;
+        ap++;
     }
 
     ap = &a[0];
@@ -22,12 +22,15 @@ int main()
     for(i = 0; i < 5; i++)
     {
         *ap *= 2;
-        *ap++;
+        ap++;
     }
+
+    ap = &a[0];
 
     for(i = 0; i < 5; i++)
     {
-        printf("O dobro do valor da posicao %d eh: %d\n", i, a[i]);
+        printf("O dobro do valor da posicao %d eh: %d\n", i, *ap);
+        ap++;
     }
 
     return 0;

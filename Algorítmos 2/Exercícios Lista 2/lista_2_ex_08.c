@@ -4,21 +4,27 @@
 
 #include <stdio.h>
 
-int preencher(int a[], int b)
+void preencher(int *a, int tamanho, int b)
 {
     int *ap;
 
-    ap = &a[0];
+    ap = a;
 
-    for(*ap; *ap < (*ap + 5); *ap++)
+    for(int i = 0; i < tamanho; i++)
     {
         *ap = b;
-    }
-    for(int i = 0; i < 5; i++)
-    {
-        printf("Valor da pos. %d: %d", i, a[i]);
+        ap++;
     }
 
+    ap = a;
+
+    for(int i = 0; i < tamanho; i++)
+    {
+        printf("Valor da pos. %d: %d\n", i, *ap);
+        ap++;
+    }
+
+    return;
 }
 
 int main()
@@ -28,7 +34,7 @@ int main()
     printf("Digite um valor:\n");
     scanf("%d", &b);
 
-    preencher(a, b);
+    preencher(a, 5, b);
 
     return 0;
 }
