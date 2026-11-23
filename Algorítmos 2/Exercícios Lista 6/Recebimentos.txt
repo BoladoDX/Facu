@@ -1,2 +1,0 @@
-Num_doc;Valor_doc;Data_Emissao;Data_Vencimento;Cod_Cli
-1;99.99;02/11/2007;02/11/2008;1
