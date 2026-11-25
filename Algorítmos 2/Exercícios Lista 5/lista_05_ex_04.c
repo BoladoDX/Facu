@@ -1,4 +1,4 @@
-//Elabore um programa que leia do usuário o tamanho de um vetor a ser lido. Em
+//4) Elabore um programa que leia do usuário o tamanho de um vetor a ser lido. Em
 //seguida, faça a alocação dinâmica desse vetor. Por fim, leia o vetor do usuário e o
 //imprima.
 

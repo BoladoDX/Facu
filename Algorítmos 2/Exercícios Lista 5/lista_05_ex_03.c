@@ -1,4 +1,4 @@
-//Crie uma estrutura chamada Cadastro. Essa estrutura deve conter o nome, a idade e o
+//3) Crie uma estrutura chamada Cadastro. Essa estrutura deve conter o nome, a idade e o
 //endereço de uma pessoa. Agora, escreva uma função que receba um inteiro positivo N e
 //retorne o ponteiro para um vetor de tamanho N, alocado dinamicamente, dessa
 //estrutura. Solicite também que o usuário digite os dados desse vetor dentro da função.
@@ -16,7 +16,6 @@ struct cadastro
 struct cadastro* vetor(int n)
 {
     struct cadastro *p;
-    struct cadastro pessoa[n];
 
     p = calloc(n, sizeof(struct cadastro));
 
@@ -29,16 +28,14 @@ struct cadastro* vetor(int n)
     for(int i = 0; i < n; i++)
     {
         printf("Digite o nome da %da pessoa:\n", i+1);
-        scanf("%s", &pessoa[n].nome);
+        scanf(" %59[^\n]", p[i].nome);
 
         printf("Digite a idade da %da pessoa:\n", i+1);
-        scanf("%d", &pessoa[n].idade);
+        scanf("%d", &p[i].idade);
 
         printf("Digite o endereco da %da pessoa:\n", i+1);
-        scanf("%s", &pessoa[n].endereco);
+        scanf(" %99[^\n]", p[i].endereco);
     }
-
-    p = &pessoa[0];
 
     return p;
 }
@@ -52,6 +49,12 @@ int main()
     scanf("%d", &n);
 
     p = vetor(n);
+
+    if(p == NULL)
+    {
+        printf("Falha em retornar ponteiro na funcao!\n");
+        return 1;
+    }
 
     printf("\nInformacoes das pessoas cadastradas (na main):\n");
     for(int i = 0; i < n; i++)

@@ -1,4 +1,4 @@
-//Faça um programa que leia um valor inteiro N não negativo. Se o valor de N for
+//5) Faça um programa que leia um valor inteiro N não negativo. Se o valor de N for
 //inválido, o usuário deverá digitar outro até que ele seja válido (ou seja, positivo). Em
 //seguida, leia um vetor V contendo N posições de inteiros, em que cada valor deverá ser
 //maior ou igual a 2. Esse vetor deverá ser alocado dinamicamente.

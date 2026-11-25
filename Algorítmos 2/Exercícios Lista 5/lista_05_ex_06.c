@@ -1,4 +1,4 @@
-//Escreva um programa que aloque dinamicamente uma matriz de inteiros. As
+//6) Escreva um programa que aloque dinamicamente uma matriz de inteiros. As
 //dimensões da matriz deverão ser lidas do usuário. Em seguida, escreva uma função que
 //receba um valor e retorne 1, caso o valor esteja na matriz, ou retorne 0, no caso
 //contrário
@@ -30,24 +30,33 @@ int main()
     printf("Digite as dimensoes da matriz (Ex: 2 3):\n");
     scanf("%d %d", &n1, &n2);
 
-    int m[n1][n2];
+    if((n1 <= 0)||(n2 <= 0))
+    {
+        printf("Valores invalidos!\n");
+        return 1;
+    }
 
     p = calloc((n1 * n2), sizeof(int));
+
+    if(p == NULL)
+    {
+        printf("Falha em alocar memoria!\n");
+        return 1;
+    }
 
     for(i = 0; i < n1; i++)
     {
         for(j = 0; j < n2; j++)
         {
-            m[i][j] = k;
+            p[i * n2 + j] = k;
             k++;
         }
-        k++;
     }
 
     printf("Digite um valor a ser procurado dentro da matriz:\n");
     scanf("%d", &n);
 
-    res = procura_valor(n, m, (n1 * n2));
+    res = procura_valor(n, p, (n1 * n2));
 
     printf("Valor retornado (1 = Verdadeiro, 0 = Falso): %d", res);
 
